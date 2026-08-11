@@ -1,15 +1,20 @@
-// src/features/rail-optimizer/utils/jrMath.js
+// Ensure calculation sums up trip.total (or trip.fare)
+export function calculateStats(trips) {
+  const totalIndividualCost = trips.reduce((sum, trip) => {
+    const base = trip.total || trip.fare || 0;
+    const supp = trip.isNozomi ? (trip.nozomi_supplement || 0) : 0;
+    return sum + base + supp;
+  }, 0);
 
-export const calculateJRValue = (itinerary) => {
-  // Current 7-Day National Pass Price (approx 50,000 Yen)
-  const PASS_PRICE = 50000; 
-  
-  // Summing up the individual ticket prices in the itinerary
-  const totalIndividualCost = itinerary.reduce((sum, trip) => sum + trip.price, 0);
-  
+  const PASS_COST = 50000;
+  const progressPercent = Math.min(100, Math.round((totalIndividualCost / PASS_COST) * 100));
+  const isProfitable = totalIndividualCost >= PASS_COST;
+  const savings = totalIndividualCost - PASS_COST;
+
   return {
-    isWorthIt: totalIndividualCost > PASS_PRICE,
-    difference: totalIndividualCost - PASS_PRICE,
-    total: totalIndividualCost
+    totalIndividualCost,
+    progressPercent,
+    isProfitable,
+    savings,
   };
-};
+}

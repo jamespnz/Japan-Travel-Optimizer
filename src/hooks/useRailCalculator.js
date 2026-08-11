@@ -37,9 +37,17 @@ export const useRailCalculator = (initialTrips = []) => {
     setSelectedTrips(prev => prev.filter(t => t.id !== id));
   };
 
-  const addTrip = (newRoute) => {
-    setSelectedTrips(prev => [...prev, { ...newRoute, id: Date.now(), isNozomi: false }]);
+  // Example fix inside useRailCalculator.js (or wherever addTrip is defined)
+const addTrip = (route) => {
+  const newTrip = {
+    ...route,
+    id: `${route.id}-${Date.now()}`, // Unique ID for key / state tracking
+    total: route.fare || route.total || 0, // Ensures total numeric value exists
+    isNozomi: false,
+    nozomi_supplement: route.nozomi_supplement || 0,
   };
+  setSelectedTrips((prev) => [...prev, newTrip]);
+};
 
   // ADDED setSelectedTrips to the return object so App.jsx can clear the list
   return { selectedTrips, stats, toggleNozomi, removeTrip, addTrip, setSelectedTrips };

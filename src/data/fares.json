@@ -1,23 +1,23 @@
 {
   "pass_price": 50000,
   "routes": [
-  { "id": "tokyo-kyoto", "origin": "Tokyo", "destination": "Kyoto", "fare": 13970, "nozomi_supplement": 4960 },
-  { "id": "tokyo-osaka", "origin": "Tokyo", "destination": "Shin-Osaka", "fare": 14720, "nozomi_supplement": 4960 },
-  { "id": "tokyo-hiroshima", "origin": "Tokyo", "destination": "Hiroshima", "fare": 19440, "nozomi_supplement": 6500 },
-  { "id": "kyoto-hiroshima", "origin": "Kyoto", "destination": "Hiroshima", "fare": 11570, "nozomi_supplement": 4170 },
-  { "id": "osaka-hiroshima", "origin": "Shin-Osaka", "destination": "Hiroshima", "fare": 10950, "nozomi_supplement": 4170 },
-  { "id": "hiroshima-tokyo", "origin": "Hiroshima", "destination": "Tokyo", "fare": 19440, "nozomi_supplement": 6500 },
-  { "id": "hiroshima-kyoto", "origin": "Hiroshima", "destination": "Kyoto", "fare": 11570, "nozomi_supplement": 4170 },
-  { "id": "hiroshima-osaka", "origin": "Hiroshima", "destination": "Shin-Osaka", "fare": 10950, "nozomi_supplement": 4170 },
-  { "id": "hiroshima-hakata", "origin": "Hiroshima", "destination": "Hakata (Fukuoka)", "fare": 9310, "nozomi_supplement": 3200 },
-  { "id": "hakata-hiroshima", "origin": "Hakata (Fukuoka)", "destination": "Hiroshima", "fare": 9310, "nozomi_supplement": 3200 },
-  { "id": "kyoto-tokyo", "origin": "Kyoto", "destination": "Tokyo", "fare": 13970, "nozomi_supplement": 4960 },
-  { "id": "osaka-tokyo", "origin": "Shin-Osaka", "destination": "Tokyo", "fare": 14720, "nozomi_supplement": 4960 },
-  { "id": "tokyo-kanazawa", "origin": "Tokyo", "destination": "Kanazawa", "fare": 14380, "nozomi_supplement": 0 },
-  { "id": "osaka-kanazawa", "origin": "Shin-Osaka", "destination": "Kanazawa", "fare": 7790, "nozomi_supplement": 0 },
-  { "id": "tokyo-nagano", "origin": "Tokyo", "destination": "Nagano", "fare": 8340, "nozomi_supplement": 0 },
-  { "id": "tokyo-sendai", "origin": "Tokyo", "destination": "Sendai", "fare": 11410, "nozomi_supplement": 0 },
-  { "id": "tokyo-hakodate", "origin": "Tokyo", "destination": "Shin-Hakodate-Hokuto", "fare": 23430, "nozomi_supplement": 0 }
+  { "id": "tokyo-kyoto", "origin": "Tokyo", "destination": "Kyoto", "fare": 13970, "total": 13970, "nozomi_supplement": 4960 },
+  { "id": "tokyo-osaka", "origin": "Tokyo", "destination": "Shin-Osaka", "fare": 14720, "total": 14720, "nozomi_supplement": 4960 },
+  { "id": "tokyo-hiroshima", "origin": "Tokyo", "destination": "Hiroshima", "fare": 19440, "total": 19440, "nozomi_supplement": 6500 },
+  { "id": "kyoto-hiroshima", "origin": "Kyoto", "destination": "Hiroshima", "fare": 11570, "total": 11570, "nozomi_supplement": 4170 },
+  { "id": "osaka-hiroshima", "origin": "Shin-Osaka", "destination": "Hiroshima", "fare": 10950, "total": 10950, "nozomi_supplement": 4170 },
+  { "id": "hiroshima-tokyo", "origin": "Hiroshima", "destination": "Tokyo", "fare": 19440, "total": 19440, "nozomi_supplement": 6500 },
+  { "id": "hiroshima-kyoto", "origin": "Hiroshima", "destination": "Kyoto", "fare": 11570, "total": 11570, "nozomi_supplement": 4170 },
+  { "id": "hiroshima-osaka", "origin": "Hiroshima", "destination": "Shin-Osaka", "fare": 10950, "total": 10950, "nozomi_supplement": 4170 },
+  { "id": "hiroshima-hakata", "origin": "Hiroshima", "destination": "Hakata (Fukuoka)", "fare": 9310, "total": 9310, "nozomi_supplement": 3200 },
+  { "id": "hakata-hiroshima", "origin": "Hakata (Fukuoka)", "destination": "Hiroshima", "fare": 9310, "total": 9310, "nozomi_supplement": 3200 },
+  { "id": "kyoto-tokyo", "origin": "Kyoto", "destination": "Tokyo", "fare": 13970, "total": 13970, "nozomi_supplement": 4960 },
+  { "id": "osaka-tokyo", "origin": "Shin-Osaka", "destination": "Tokyo", "fare": 14720, "total": 14720, "nozomi_supplement": 4960 },
+  { "id": "tokyo-kanazawa", "origin": "Tokyo", "destination": "Kanazawa", "fare": 14380, "total": 14380, "nozomi_supplement": 0 },
+  { "id": "osaka-kanazawa", "origin": "Shin-Osaka", "destination": "Kanazawa", "fare": 7790, "total": 7790, "nozomi_supplement": 0 },
+  { "id": "tokyo-nagano", "origin": "Tokyo", "destination": "Nagano", "fare": 8340, "total": 8340, "nozomi_supplement": 0 },
+  { "id": "tokyo-sendai", "origin": "Tokyo", "destination": "Sendai", "fare": 11410, "total": 11410, "nozomi_supplement": 0 },
+  { "id": "tokyo-hakodate", "origin": "Tokyo", "destination": "Shin-Hakodate-Hokuto", "fare": 23430, "total": 23430, "nozomi_supplement": 0 }
 ]
   
 }
