@@ -17,6 +17,7 @@
   { "id": "osaka-kanazawa", "origin": "Shin-Osaka", "destination": "Kanazawa", "fare": 7790, "total": 7790, "nozomi_supplement": 0 },
   { "id": "tokyo-nagano", "origin": "Tokyo", "destination": "Nagano", "fare": 8340, "total": 8340, "nozomi_supplement": 0 },
   { "id": "tokyo-sendai", "origin": "Tokyo", "destination": "Sendai", "fare": 11410, "total": 11410, "nozomi_supplement": 0 },
+  { "id": "sendai-tokyo", "origin": "Sendai", "destination": "Tokyo", "fare": 11410, "total": 11410, "nozomi_supplement": 0 },
   { "id": "tokyo-hakodate", "origin": "Tokyo", "destination": "Shin-Hakodate-Hokuto", "fare": 23430, "total": 23430, "nozomi_supplement": 0 }
 ]
   
