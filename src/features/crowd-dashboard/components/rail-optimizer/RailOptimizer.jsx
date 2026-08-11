@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BreakevenBar from "./BreakevenBar";
 import TripCard from "./TripCard";
-import { PlusCircle, TrainFront } from "lucide-react";
+import { PlusCircle, Terminal, Share2, Trash2 } from "lucide-react";
 
 const RailOptimizer = ({
   selectedTrips,
@@ -10,9 +10,8 @@ const RailOptimizer = ({
   removeTrip,
   addTrip,
   availableRoutes,
-  clearTrips, // Added back
+  clearTrips,
 }) => {
-  // --- 1. HOOKS & LOGIC ---
   const [selectedRouteId, setSelectedRouteId] = useState("");
 
   const handleAddClick = () => {
@@ -20,7 +19,7 @@ const RailOptimizer = ({
     const routeToAdd = availableRoutes.find((r) => r.id === selectedRouteId);
     if (routeToAdd) {
       addTrip(routeToAdd);
-      setSelectedRouteId(""); 
+      setSelectedRouteId("");
     }
   };
 
@@ -30,26 +29,33 @@ const RailOptimizer = ({
       .map((t) => `- ${t.origin} to ${t.destination}: ¥${(t.total + (t.isNozomi ? t.nozomi_supplement : 0)).toLocaleString()}`)
       .join("\n");
 
-    const shareContent = `🚅 Japan Rail Summary\n\n${itineraryText}\n\nTotal: ¥${stats.totalIndividualCost.toLocaleString()}\nVerdict: ${verdict}`;
+    const shareContent = `🚅 JAPAN RAIL FINANCIAL SUMMARY\n\n${itineraryText}\n\nTotal: ¥${stats.totalIndividualCost.toLocaleString()}\nVerdict: ${verdict}`;
     navigator.clipboard.writeText(shareContent);
-    alert("Itinerary copied to clipboard!");
+    alert("Terminal summary copied to clipboard.");
   };
 
-  // --- 2. UI RENDER ---
   return (
-    <div className="flex flex-col gap-6 max-w-4xl mx-auto p-4 lg:p-8">
-      {/* Header Branding */}
-      <div className="flex items-center gap-4">
-        <div className="p-3 bg-indigo-500/20 rounded-2xl">
-          <TrainFront className="text-indigo-400" size={32} />
+    <div className="flex flex-col gap-4 max-w-5xl mx-auto p-3 lg:p-6 font-mono text-slate-200 antialiased">
+      
+      {/* TERMINAL HEADER STRIP */}
+      <div className="flex items-center justify-between border-b border-slate-800 pb-3 bg-slate-950/80 px-4 py-2.5 rounded-sm">
+        <div className="flex items-center gap-3">
+          <Terminal className="text-cyan-500" size={18} />
+          <div>
+            <h1 className="text-xs font-bold text-slate-100 uppercase tracking-wider flex items-center gap-2">
+              RAIL_OPTIMIZER // FINANCIAL_ANALYTICS_TERMINAL
+              <span className="text-[10px] px-1.5 py-0.2 bg-slate-800 text-cyan-400 border border-slate-700">v4.0.26</span>
+            </h1>
+            <p className="text-[11px] text-slate-500">JR PASS METRIC ENGINE // ¥50,000 BASELINE THRESHOLD</p>
+          </div>
         </div>
-        <div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">Rail Optimizer</h1>
-          <p className="text-slate-400 text-sm">Compare fares vs. the ¥50,000 JR Pass</p>
+        <div className="hidden sm:flex items-center gap-2 text-[10px] text-slate-400">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span>SYS_STATUS: OPERATIONAL</span>
         </div>
       </div>
 
-      {/* Financial Overview Progress Bar */}
+      {/* FINANCIAL OVERVIEW BAR */}
       <BreakevenBar
         totalCost={stats.totalIndividualCost}
         progress={stats.progressPercent}
@@ -57,52 +63,56 @@ const RailOptimizer = ({
         diff={Math.abs(stats.savings)}
       />
 
-      {/* Main Content Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* MAIN CONTENT GRID */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         
-        {/* LEFT COLUMN: ITINERARY */}
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-2">
+        {/* LEFT PANEL: ITINERARY BUILDER (7 Cols) */}
+        <div className="lg:col-span-7 flex flex-col gap-3 bg-slate-900/40 border border-slate-800 p-4 rounded-sm">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pb-2 border-b border-slate-800/60">
             <div className="flex items-center gap-2">
-              <h2 className="text-slate-300 font-semibold px-1 text-sm uppercase tracking-wider">Your Itinerary</h2>
+              <span className="text-xs font-bold text-slate-300 uppercase tracking-widest">[ITINERARY_LEDGER]</span>
               {selectedTrips.length > 0 && (
                 <button 
                   onClick={clearTrips}
-                  className="text-[10px] text-slate-500 hover:text-rose-400 font-bold border border-slate-800 px-2 py-0.5 rounded transition-all"
+                  className="text-[10px] text-rose-400 hover:text-white hover:bg-rose-950/50 border border-rose-900/50 px-2 py-0.5 rounded-sm transition-all font-mono flex items-center gap-1"
                 >
-                  CLEAR ALL
+                  <Trash2 size={10} />
+                  CLEAR
                 </button>
               )}
             </div>
 
-            {/* ROUTE PICKER */}
-            <div className="flex items-center gap-2 w-full sm:w-auto">
+            {/* ROUTE PICKER CONTROL */}
+            <div className="flex items-center gap-1.5 w-full sm:w-auto">
               <select
                 value={selectedRouteId}
                 onChange={(e) => setSelectedRouteId(e.target.value)}
-                className="bg-slate-800 text-white text-xs rounded-lg px-2 py-1.5 border border-slate-700 focus:ring-1 focus:ring-indigo-500 outline-none flex-grow sm:flex-grow-0"
+                className="bg-slate-950 text-slate-200 text-xs rounded-sm px-2 py-1.5 border border-slate-700 focus:border-cyan-500 focus:outline-none flex-grow font-mono"
               >
-                <option value="">Select Route...</option>
+                <option value="">-- SELECT ROUTE CORRIDOR --</option>
                 {availableRoutes?.map((route) => (
-                  <option key={route.id} value={route.id}>{route.origin} → {route.destination}</option>
+                  <option key={route.id} value={route.id}>
+                    {route.origin} → {route.destination} (¥{route.fare.toLocaleString()})
+                  </option>
                 ))}
               </select>
               <button
                 onClick={handleAddClick}
                 disabled={!selectedRouteId}
-                className="bg-indigo-500 text-white p-2 rounded-lg hover:bg-indigo-400 disabled:opacity-30 transition-all active:scale-95"
+                className="bg-cyan-900/30 text-cyan-400 border border-cyan-700 hover:bg-cyan-800 hover:text-white p-1.5 rounded-sm disabled:opacity-20 transition-all font-mono"
+                title="Add Route to Ledger"
               >
                 <PlusCircle size={16} />
               </button>
             </div>
           </div>
 
-          {/* TRIP LIST */}
-          <div className="flex flex-col gap-3 max-h-[400px] overflow-y-auto pr-2 scrollbar-hide">
+          {/* TRIP CARDS LIST */}
+          <div className="flex flex-col gap-2 max-h-[420px] overflow-y-auto pr-1">
             {selectedTrips.length === 0 ? (
-              <div className="border-2 border-dashed border-slate-800 rounded-3xl p-12 text-center">
-                <p className="text-slate-500 text-sm italic text-balance">
-                  No trips added. Start by selecting a route above.
+              <div className="border border-dashed border-slate-800 rounded-sm p-8 text-center bg-slate-950/30">
+                <p className="text-slate-500 text-xs font-mono">
+                  [NO_DATA] Ledger empty. Select a corridor route above to execute calculation.
                 </p>
               </div>
             ) : (
@@ -113,32 +123,43 @@ const RailOptimizer = ({
           </div>
         </div>
 
-        {/* RIGHT COLUMN: BENTO INSIGHTS */}
-        <div className="bg-slate-900/40 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between">
-          <div>
-            <h3 className="text-white font-bold mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              Optimizer Insights
-            </h3>
-            <ul className="space-y-4 text-sm text-slate-400">
-              <li className="flex gap-3">
-                <span className="text-indigo-400 font-mono text-xs font-bold">01.</span>
-                <p>National JR Pass requires a supplement fee for Nozomi/Mizuho trains.</p>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-indigo-400 font-mono text-xs font-bold">02.</span>
-                <p>{stats.isProfitable ? "Pass Achieved! The pass is now saving you money." : "Individual tickets are currently cheaper."}</p>
-              </li>
-            </ul>
+        {/* RIGHT PANEL: BENTO TELEMETRY & INSIGHTS (5 Cols) */}
+        <div className="lg:col-span-5 bg-slate-900/40 border border-slate-800 p-4 rounded-sm flex flex-col justify-between">
+          <div className="space-y-4">
+            <div className="border-b border-slate-800 pb-2">
+              <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-cyan-400" />
+                SYSTEM_DIAGNOSTICS & RULES
+              </h3>
+            </div>
+
+            <div className="space-y-3 text-xs text-slate-400 font-mono">
+              <div className="p-2.5 bg-slate-950 border border-slate-800 rounded-sm">
+                <span className="text-cyan-500 font-bold mr-2">01. NOZOMI_SUPPLEMENT</span>
+                <p className="text-slate-400 text-[11px] mt-1">
+                  JR Pass baseline excludes Nozomi/Mizuho Shinkansen express services. Toggling express options applies localized surcharge logic.
+                </p>
+              </div>
+
+              <div className="p-2.5 bg-slate-950 border border-slate-800 rounded-sm">
+                <span className="text-cyan-500 font-bold mr-2">02. FINANCIAL_VERDICT</span>
+                <p className={`text-[11px] font-bold mt-1 ${stats.isProfitable ? "text-emerald-400" : "text-amber-400"}`}>
+                  {stats.isProfitable 
+                    ? "[STATUS: BREAKEVEN_EXCEEDED] - Standard 7-Day National Pass yield is positive." 
+                    : "[STATUS: INDIVIDUAL_FARES_OPTIMAL] - Point-to-point ticketing remains optimal."}
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-slate-800">
+          <div className="mt-6 pt-4 border-t border-slate-800">
             <button
               onClick={handleShare}
               disabled={selectedTrips.length === 0}
-              className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-30 text-white text-xs font-black py-4 rounded-2xl transition-all shadow-lg shadow-indigo-500/20"
+              className="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-cyan-900/40 text-cyan-400 hover:text-cyan-200 border border-slate-700 hover:border-cyan-600 disabled:opacity-20 text-xs font-bold py-2.5 px-4 rounded-sm transition-all font-mono"
             >
-              SHARE SUMMARY
+              <Share2 size={14} />
+              EXPORT_TERMINAL_SUMMARY
             </button>
           </div>
         </div>
