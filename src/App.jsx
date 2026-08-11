@@ -17,7 +17,7 @@ function App() {
   };
 
   return (
-    <div className="relative w-full h-screen bg-slate-950 overflow-hidden font-sans text-white">
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-mono antialiased selection:bg-cyan-900 selection:text-cyan-200">
       
       {/* 1. Map Layer (Background) */}
       <div className="absolute inset-0 z-0">
