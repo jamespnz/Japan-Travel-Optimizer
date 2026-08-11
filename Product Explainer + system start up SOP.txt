@@ -1,0 +1,86 @@
+React Rail Optimizer (v4.0)
+
+Let’s reset our baseline coordinates and shift our focus entirely back to the primary project assigned to this specific workspace workspace channel: the **React Rail Optimizer** (integrated with the **Japan Travel Optimizer v4.0** system architecture).
+
+---
+
+## 🗺️ Product Profile: React Rail Optimizer (v4.0)
+
+The **React Rail Optimizer** is a high-density, terminal-inspired geospatial decision support dashboard designed to solve a high-value consumer friction point: calculating absolute financial breakeven points for Japanese rail passes (like the JR Pass) while layering real-time, time-aware crowd visualization telemetry across transit routes.
+
+### Core Product Modules
+
+* **The Breakeven Math Engine:** Evaluates complex multi-city itinerary inputs against localized dynamic transit price models to determine exact cost thresholds.
+* **Geospatial Crowd Layer:** Integrates Mapbox GL JS to render interactive heatmaps showing peak transit congestion points across major transit sectors (e.g., Tokyo, Tokaido Shinkansen corridors, Osaka).
+* **The Command Terminal UI:** Tailored to an ultra-dense, low-latency layout featuring font-mono typography, an analytical control room feel, and a Navy/Slate/Silver color profile.
+
+---
+
+## 🗂️ Local Workspace Navigation
+
+Based on your structural environment taxonomy, your active build directories live across the following platforms:
+
+### 1. Local Machine Target Folders
+
+Your directory patterns follow a clean nesting tree. Check these precise destinations using your PowerShell terminal or File Explorer:
+
+* `C:\Users\James\OneDrive\Documents\1_PROGRAMMING\2. WEB DEV\1_Products\App Design Studio Products\2_JapanTravelOptimizer\`
+* *Alternative directory target:* Look for folders named `JapanTravelOptimizer`, `RailOptimizer`, or `JapanTravelPass` within your `App Design Studio Products` parent directory.
+
+### 2. GitHub & External Hosting Repositories
+
+* **GitHub:** Check your account repositories for `japan-travel-optimizer`, `rail-optimizer-v4`, or `zenith-rail-terminal`.
+* **Database Layer:** Your cloud data schemas, route pricing metrics, and lookup matrices live inside a dedicated **Supabase** instance project cluster.
+* **Production Deployment:** Your production staging assets are hosted and served via continuous deployment on **Netlify** or **Railway**. Check your provider control panels for active app addresses matching your project branding.
+
+---
+
+## 🚀 Local Run Sheet: Booting the Build State
+
+To inspect the current compilation state of the Rail Optimizer without bleeding variables from ZenithAudit, run this exact terminal initialization pipeline:
+
+1. **Navigate to the Rail Optimizer Workspace:** Required.
+Open a fresh **PowerShell** window and execute the change directory command directly to your target directory:
+
+```powershell
+cd "C:\Users\James\OneDrive\Documents\1_PROGRAMMING\2. WEB DEV\1_Products\App Design Studio Products\2_JapanTravelOptimizer"
+
+```
+
+*(If your folder name varies slightly, use `cd ..` and `dir` to confirm the target folder name).*
+
+
+2. **Audit Environment Variable State:** Prerequisite Verification.
+Verify the path presence of your map configurations and database pointers before spinning up the compiler:
+
+```powershell
+Get-Content .env
+
+```
+
+Confirm you see your map variables (e.g., `VITE_MAPBOX_ACCESS_TOKEN`) and Supabase keys mapped correctly.
+
+
+3. **Purge Compiler Artifacts:** Anti-Loop Protocol.
+Wipe away any shared caching layers left over from your other project sprint blocks:
+
+```powershell
+Remove-Item -Recurse -Force node_modules\.vite -ErrorAction SilentlyContinue
+
+```
+
+
+4. **Ignite the Local Network Server:** Launch Execution.
+Boot the optimization engine with a forced fresh dependency indexing pass:
+
+```powershell
+npm run dev -- --force
+
+```
+
+
+---
+
+Once the terminal prints out your address connection tracking point (`http://localhost:5173/`), load the URL into Edge to inspect your active canvas layout.
+
+Let me know what you find when the map container renders—are your route planning matrices drawing properly?

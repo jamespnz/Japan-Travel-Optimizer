@@ -1,0 +1,71 @@
+{
+  "pass_price": 50000,
+  "routes": [
+    {
+      "id": "tok-kyo",
+      "origin": "Tokyo",
+      "destination": "Kyoto",
+      "total": 13320,
+      "nozomi_supplement": 4960
+    },
+    {
+      "id": "tok-osa",
+      "origin": "Tokyo",
+      "destination": "Osaka",
+      "total": 13870,
+      "nozomi_supplement": 4960
+    },
+    {
+      "id": "tok-hir",
+      "origin": "Tokyo",
+      "destination": "Hiroshima",
+      "total": 18380,
+      "nozomi_supplement": 6500
+    },
+    {
+      "id": "kyo-hir",
+      "origin": "Kyoto",
+      "destination": "Hiroshima",
+      "total": 10770,
+      "nozomi_supplement": 4170
+    },
+    {
+      "id": "osa-hir",
+      "origin": "Osaka",
+      "destination": "Hiroshima",
+      "total": 9890,
+      "nozomi_supplement": 4170
+    },
+    {
+      "id": "tok-kan",
+      "origin": "Tokyo",
+      "destination": "Kanazawa",
+      "total": 13850,
+      "nozomi_supplement": 0
+    },
+    {
+      "id": "osa-kan",
+      "origin": "Osaka",
+      "destination": "Kanazawa",
+      "total": 7280,
+      "nozomi_supplement": 0
+    },
+    {
+      "id": "tok-nag",
+      "origin": "Tokyo",
+      "destination": "Nagano",
+      "total": 8140,
+      "nozomi_supplement": 0
+    },
+    {
+  "cities": {
+    "Tokyo": [139.767, 35.681],
+    "Kyoto": [135.758, 35.011],
+    "Osaka": [135.502, 34.693],
+    "Hiroshima": [132.459, 34.385],
+    "Kanazawa": [136.656, 36.561]
+  }
+}
+  ]
+  
+}

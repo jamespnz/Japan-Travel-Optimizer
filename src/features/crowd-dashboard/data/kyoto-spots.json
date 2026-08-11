@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Kiyomizu-dera", "density": 0.95, "vibe": "Chaotic" },
+      "geometry": { "type": "Point", "coordinates": [135.785, 34.994] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Kodai-ji", "density": 0.3, "vibe": "Zen" },
+      "geometry": { "type": "Point", "coordinates": [135.781, 35.000] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Arashiyama Bamboo", "density": 0.88, "vibe": "Busy" },
+      "geometry": { "type": "Point", "coordinates": [135.672, 35.017] }
+    }
+  ]
+}

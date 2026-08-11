@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+/* If you have custom theme stuff, it goes here */
+@theme {
+  --color-kyoto-green: #10b981; /* Week 1 */
+  
+  /* Week 2: Rail Optimizer Colors */
+  --color-shinkansen-blue: #6366f1; /* Indigo-500 */
+  --color-nozomi-gold: #fbbf24;    /* Amber-400 */
+  --color-savings-teal: #2dd4bf;   /* Teal-400 */
+  --color-bento-bg: #0f172a;       /* Slate-900 */
+  --color-bento-border: #1e293b;   /* Slate-800 */
+}
+
+/* Ensure the map can actually fill the screen */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
